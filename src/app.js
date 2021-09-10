@@ -162,14 +162,9 @@ class App{
                             if(li.hasClass('selected')) {
                                 li.removeClass('selected')
                                 this.#talentSelected.delete(talent);
-                                if(this.#talentSelected.size<3) {
-                                    talentPage.find('#next').text('请选择3个')
-                                }
+                            
                             } else {
-                                if(this.#talentSelected.size==3) {
-                                    this.hint('只能选3个天赋');
-                                    return;
-                                }
+                            
 
                                 const exclusive = this.#life.exclusive(
                                     Array.from(this.#talentSelected).map(({id})=>id),
